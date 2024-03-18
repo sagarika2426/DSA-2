@@ -9,16 +9,23 @@
 //Rotation 2 - [5,6,1,2,3,4]
 //Rotation 3 - [4,5,6,1,2,3]
 
+//method 1
+
 function rotateArray(nums, k){
     let size = nums.length;
 
     if(size < k) {//If k = 7 and size = 6, then k % size will give 1. So effectively, you only need to rotate the array by 1 step
         k = k % size; //7%6 =1
     }
-    const rotated = nums.splice(size-k, k);
+    const rotated = nums.splice(size-k, k); //o(n)
     console.log(rotated)
-    nums.unshift(...rotated)
+    nums.unshift(...rotated) //0(n)
     return nums;
 }
 
 console.log(rotateArray([1,2,3,4,5,6], 2));
+
+//time complexity - o(n)
+
+
+
